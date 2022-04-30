@@ -16,7 +16,7 @@ after_success:
   #Log in Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take those images and push the to docker hub
-  - docker push solb/muti-client
-  - docker push solb/muti-nginx
-  - docker push solb/muti-server
-  - docker push solb/muti-worker
+  - docker push solb/multi-client
+  - docker push solb/multi-nginx
+  - docker push solb/multi-server
+  - docker push solb/multi-worker
