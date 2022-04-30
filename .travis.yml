@@ -8,10 +8,10 @@ before_install:
 script:
   - docker run -e CI=true solb/react-test npm test
 after_success:
-  - docker build -t solb/multi-client -f ./client
-  - docker build -t solb/multi-nginx -f ./nginx  
-  - docker build -t solb/multi-server -f ./server 
-  - docker build -t solb/multi-worker -f ./worker 
+  - docker build -t solb/multi-client ./client
+  - docker build -t solb/multi-nginx ./nginx  
+  - docker build -t solb/multi-server ./server 
+  - docker build -t solb/multi-worker ./worker 
 
   #Log in Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
